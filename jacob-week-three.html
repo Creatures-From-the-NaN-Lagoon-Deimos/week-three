@@ -1,191 +1,211 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">
-      <style>
-         body {
-            background-color: lightgreen;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-top: 2%;
+<head>
+   <meta charset="utf-8">
+   <style>
+      body {
+         background-color: #474E5C;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         margin-top: 2%;
+      }
+      main {
+         background-color: #FCDC3B;
+         width: 85vw;
+         height: 80vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-left: 7%;
+      }
+      article {
+         background-color: #FCDC3B;
+         width: 85vw;
+         height: 80vh;
+         display: flex;
+         align-items: start;
+         justify-content: center;
+         margin-left: 7%;
+      }
+      .problems {
+         background: linear-gradient(to right, lightgrey, linen);
+         border: 2px solid lightsteelblue;
+         box-shadow: 0 0 5px 2px darkslategrey;
+         width: 35%;
+         display: flex;
+         flex-direction:column;
+         justify-content: center;
+         align-items: center;
+      }
+      .problems:nth-of-type(2) {
+         margin-left: 5%;
+      }
+      .problems img {
+         max-width: 100%;
+         height: 90%;
+      }
+      .div_head {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+      }
+      h3 {
+         margin-bottom: 0;
+      }
+      #decrypt_text {
+         height: 45%;
+         width: 60%;
+         background-color: #141B29;
+         color: linen;
+         z-index: 4;
+         position: absolute;
+         overflow: scroll;
+         left: 19%;
+         bottom: -45%;
+         border: 2px solid darkseagreen;
+      }
+      #header {
+         background-color: lightgrey;
+         border: 2px solid lightsteelblue;
+         padding-bottom: 2%;
+         box-shadow: 0 0 5px 2px darkslategray;
+      }
+      #input {
+         box-shadow: 1px 1px 2px 1px darkslategray;
+      }
+   </style>
+</head>
+<body>
+<header>
 
-         }
-         main {
-            background-color: lightcyan;
-            width: 85vw;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 7%;
-         }
-         article {
-            background-color: lightcyan;
-            width: 85vw;
-            height: 80vh;
-            display: flex;
-            align-items: start;
-            justify-content: center;
-            margin-left: 7%;
-         }
-         .problems {
-            background: linear-gradient(to right, lightgrey, linen);
-            border: 2px solid lightsteelblue;
-            box-shadow: 0 0 5px 2px darkorchid;
-            width: 35%;
-            display: flex;
-            flex-direction:column;
-            justify-content: center;
-            align-items: center;
-         }
-         .problems img {
-            max-width: 100%;
-            height: 90%;
-         }
-         .div_head {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-         }
-         h3 {
-            margin-bottom: 0;
-         }
-         #decrypt_text {
-            height: 45%;
-            width: 60%;
-            background-color: linen;
-            z-index: 4;
-            position: absolute;
-            overflow: scroll;
-            left: 23%;
-            bottom: -40%;
-            border: 2px solid darkseagreen;
-         }
-         #btn {
-         }
+</header>
+<main>
+   <div class="problems">
+      <div class="div_head">
+         <h3>First Problem:</h3>
+         <h5>--Calculate total groceries--</h5>
+      </div>
+      <div class="div_body">
+         <img src="code-w3-1.png">
+      </div>
+   </div>
+   <div class="problems" id="notYou">
+      <div class="div_head">
+         <h3>Second Problem:</h3>
+         <h5>--Reverse Letters of Strings With Odd Number of Letters--</h5>
+      </div>
+      <div class="div_body">
+         <img src="code-w3-2.png">
+      </div>
+   </div>
 
-
-      </style>
-   </head>
-   <body>
-      <header>
-
-      </header>
-      <main>
-         <div class="problems">
-            <div class="div_head">
-            <h3>First Problem:</h3>
-            <h5>--Calculate total groceries--</h5>
-            </div>
-            <div class="div_body">
-               <img src="code-w3-1.png">
-            </div>
+</main>
+<article>
+   <div id="enc" style="text-align: center">
+      <div id="header">
+         <h1>The Encryptor</h1>
+         <div id="encrypt_text">
+            <input type="text" placeholder="type text here" id="input">
+            <input type="radio" id="encrypt" name="radio">Encrypt Me!
+            <input type="radio" id="decrypt" name="radio"> Decrypt Me!
+            <button id="btn">Submit</button>
          </div>
-         <div class="problems" id="notYou">
-            <div class="div_head">
-               <h3>Second Problem:</h3>
-               <h5>--Reverse Letters of Strings With Odd Number of Letters--</h5>
-            </div>
-            <div class="div_body">
-               <img src="code-w3-2.png">
-            </div>
-         </div>
+      </div>
+      <div id="decrypt_text"></div>
+   </div>
+</article>
+<footer>
+   <
+</footer>
 
-      </main>
-      <article>
-         <div id="enc">
-            <h1>The Encryptor</h1>
-            <div id="encrypt_text">
-               <input type="text" placeholder="type text here" id="input">
-               <button id="btn">Submit</button>
-            </div>
-            <div id="decrypt_text"></div>
-         </div>
-
-      </article>
-      <footer>
-
-      </footer>
-
-      <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
-   <script>
+<script>
 
-      $(document).ready(function() {
-//3ll1#acca
-//          $('#btn').click(function() {
-//              var newInput = $('#input').val();
-//              encrypt(newInput);
-//              });
-//
-//           function encrypt(newInput) {
-//               var newStr = "";
-//               var oneArray = [];
-//               for (var i = 0; i < newInput.length; i++) {
-//                   // var i = 0;
-//                   console.log(newInput);
-//                   newStr = newInput.split('').reverse().join('');
-//                   console.log(newStr);
-//                   newStr = newStr.replace(/a/gi,'0');
-//                   newStr = newStr.replace(/e/gi,'1');
-//                   newStr = newStr.replace(/i/gi,'2');
-//                   newStr = newStr.replace(/o/gi,'3');
-//                   newStr = newStr.replace(/u/gi,'4');
-//                   newStr = newStr.replace(/h/gi, '#');
-//                   newStr = newStr.replace(/p/gi, 'wer');
-//                   newStr = newStr.replace(/t/gi, '887');
-//                   oneArray = newStr.split(' ');
-//                   oneArray.splice(1, 0, "acca");
-//                   console.log(oneArray);
-//                   newStr = oneArray.join('');
-//                   console.log(newStr);
-//
-//             };
-//               $('#decrypt_text').html('<p> ' + newStr + ' </p>');
-//          };
+    $(document).ready(function() {
 
-//1r1#887acca3ll1#
-          function decrypt(newInput) {
-              var newStr = "";
-              var oneArray = [];
-              for (var i = 0; i < newInput.length; i++) {
-                  // var i = 0;
-                  console.log(newInput);
-                  // newStr = newInput.split('');
-                  newStr = newInput;
-                  console.log(newStr);
-                  newStr = newStr.replace(/0/gi,'a');
-                  newStr = newStr.replace(/1/gi,'e');
-                  newStr = newStr.replace(/2/gi,'i');
-                  newStr = newStr.replace(/3/gi,'o');
-                  newStr = newStr.replace(/4/gi,'u');
-                  newStr = newStr.replace(/#/gi, 'h');
-                  newStr = newStr.replace(/wer/gi, 'p');
-                  newStr = newStr.replace(/887/gi, 't');
-                  newStr = newStr.replace(/acca/gi, '');
-                  oneArray = newStr.split('').reverse().join('');
-                  // oneArray.splice(1, 0, "acca");
-                  console.log(oneArray);
-                  // newStr = oneArray.join('');
-                  // console.log(newStr);
+        //************************************
+        // call function based on radio choice
+        //************************************
 
-              };
-                            $('#decrypt_text').html('<p> ' + oneArray + ' </p>');
+        $('#btn').click(function () {
+            if (document.getElementById("encrypt").checked == true) {
+                var newInput = $('#input').val();
+                encrypt(newInput);
+            } else if (document.getElementById("decrypt").checked == true) {
+                var newInput = $('#input').val();
+                decrypt(newInput);
+            } else {
+                console.log("nope nope");
+            }
 
-          }
-         $('#btn').click(function() {
-                 var newInput = $('#input').val();
-             decrypt(newInput);
-         })
+        });
 
-      });
+        //**************************
+        // begin encryption function
+        //**************************
+        function encrypt(newInput) {
+            var newStr = "";
+            var oneArray = [];
+            // var i = 0;
+            console.log(newInput);
+            newStr = newInput.split('').reverse().join('');
+            console.log(newStr);
+            newStr = newStr.replace(/a/gi, '0');
+            newStr = newStr.replace(/e/gi, '1');
+            newStr = newStr.replace(/i/gi, '2');
+            newStr = newStr.replace(/o/gi, '3');
+            newStr = newStr.replace(/u/gi, '4');
+            newStr = newStr.replace(/h/gi, '#');
+            newStr = newStr.replace(/p/gi, 'wer');
+            newStr = newStr.replace(/t/gi, '887');
+            newStr = newStr.replace(/ /gi, '*');
+            oneArray = newStr.split(' ');
+            oneArray.splice(1, 0, "acca");
+            console.log(oneArray);
+            newStr = oneArray.join('');
+            console.log(newStr);
+            $('#decrypt_text').html('<p> ' + newStr + ' </p>');
+        };
+
+        //**************************
+        // begin decryption function
+        //**************************
+
+        function decrypt(newInput) {
+            var newStr = "";
+            var oneArray = [];
+            // var i = 0;
+            console.log(newInput);
+            // newStr = newInput.split('');
+            newStr = newInput;
+            console.log(newStr);
+            newStr = newStr.replace(/0/gi, 'a');
+            newStr = newStr.replace(/1/gi, 'e');
+            newStr = newStr.replace(/2/gi, 'i');
+            newStr = newStr.replace(/3/gi, 'o');
+            newStr = newStr.replace(/4/gi, 'u');
+            newStr = newStr.replace(/#/gi, 'h');
+            newStr = newStr.replace(/wer/gi, 'p');
+            newStr = newStr.replace(/887/gi, 't');
+            newStr = newStr.replace(/acca/gi, '');
+            newStr = newStr.replace(/\*/gi, ' ');
+            oneArray = newStr.split('').reverse().join('');
+            console.log(oneArray);
+
+            $('#decrypt_text').html('<p> ' + oneArray + ' </p>');
+
+        };
+
+    });
 
 
 
 
 
-   </script>
-   </body>
+
+</script>
+</body>
 </html>
