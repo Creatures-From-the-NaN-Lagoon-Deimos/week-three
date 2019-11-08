@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    * {
+        font-size: 24px;
+        text-align: center;
+        margin: 20px;
+    }
+
+    input {
+        width: 50px;
+    }
+</style>
+<body>
+
+
+<p id="clockOutput"></p>
+
+<div id="alarm">
+    <h4> Set Alarm (24hr)</h4>
+    H <input type="number" id="alarmHour">
+    M <input type="number" id="alarmMinute">
+    S <input type="number" id="alarmSecond">
+    <br>
+    <!--    <button id="theButton">Set Alarm</button>-->
+
+    <br>
+
+
+    <div id="alarmOutput"></div>
+
+</div>
+
+<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+<script>
+
+
+    // $("#ampm").change(function () {
+    //     console.log($(this).val());
+    // });
+
+    var d = new Date();
+    var meridiem;
+    var hours = d.getHours();
+
+    var minutes = addZero(d.getMinutes());
+    var seconds = addZero(d.getSeconds());
+    var currentTime = hours + minutes + seconds;
+    console.log(currentTime);
+
+    console.log(hours);
+    console.log(minutes);
+    console.log(seconds);
+
+
+    // funtion to add leading zero is hours, minutes, or seconds is less than 10
+    function addZero(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+
+    //gets and diplays time
+    function showTime() {
+        var d = new Date();
+        var meridiem;
+        var hours = d.getHours();
+        // converts 24hr clock into 12 hour clock, and formats meridiem
+        if (hours > 12) {
+            hours = (hours - 12);
+            meridiem = "PM";
+        } else {
+            meridiem = "AM";
+        }
+        var minutes = addZero(d.getMinutes());
+        var seconds = addZero(d.getSeconds());
+        $("#clockOutput").html("" + hours + ":" + minutes + ":" + seconds + " " + meridiem);
+    }
+
+
+    //runs time display every second, creating a working clock
+    setInterval(function () {
+        showTime();
+    }, 1000);
+
+
+    function setAlarm() {
+        var d = new Date();
+        var meridiem;
+        var hours = d.getHours();
+        var minutes = addZero(d.getMinutes());
+        var seconds = addZero(d.getSeconds());
+        var currentTime = "" + hours + minutes + seconds;
+        var alarmHour = $("#alarmHour").val();
+        var alarmMinute = $("#alarmMinute").val();
+        var alarmSecond = $("#alarmSecond").val();
+        var alarmTime = "" + alarmHour + alarmMinute + alarmSecond;
+        // console.log(alarmTime);
+        // console.log(currentTime);
+        if (alarmTime === currentTime) {
+            $("#alarmOutput").html("<img src='assets/Wake-Up-820x500.jpg'>");
+            console.log("alarm");
+        }
+    }
+
+
+    $("#theButton").click(function () {
+        setAlarm();
+    });
+
+    setInterval(setAlarm, 1000);
+
+
+</script>
+</body>
+</html>
