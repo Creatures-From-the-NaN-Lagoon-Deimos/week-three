@@ -87,7 +87,7 @@ intervalID = setInterval(fade, 150);
                 })
             setTimeout(function() {
                 $('.circleTwo').toggleClass('yellow')
-            }, 1400)
+            }, 2700)
         });
 
         $('.circleThree').click(function () {
