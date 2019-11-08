@@ -1,0 +1,40 @@
+.circle {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-right: 0;
+}
+.lime {
+    background-color: lime!important;
+}
+.yellow {
+    background-color: yellow!important;
+}
+.red {
+    background-color: red!important;
+}
+.circleOne {
+    background-color: green;
+}
+.circleTwo {
+    background-color: #EEA939;
+}
+.circleThree {
+    background-color: darkred;
+}
+.carGif {
+    height: 40px;
+    width: 40px;
+    position: absolute
+}
+.flip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+#explosion {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 305px
+}
