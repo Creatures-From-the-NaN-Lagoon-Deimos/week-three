@@ -1,5 +1,5 @@
 "use strict";
-
+var scream = new Audio ('youaaaaargh.mp3');
 $(document).ready(function() {
 $('body').append('<div>1</div>');
 var counter = 1;
@@ -52,12 +52,14 @@ intervalID = setInterval(fade, 150);
 
 //And this fires after the sentence is complete for 2 seconds
 
+
     function circles() {
         $('body').html("");
-        $('body').html('<div class="circle-container">' + '<div class="circle" id="circleOne"></div>' + '<div class="circle" id="circleTwo"></div>' + '<div class="circle" id="circleThree"></div>' + '<div>Click A Light</div><br>' + '<div><img id="carGif1" class="carGif" src="cargif.gif" alt="carGif"></div></div>')
+        $('body').html('<div class="circle-container">' + '<div class="circle circleOne"></div>' + '<div class="circle circleTwo"></div>' + '<div class="circle circleThree"></div>' + '<div>Click A Light</div><br>' + '<div><img id="carGif1" class="carGif" src="cargif.gif" alt="carGif"></div></div>')
 
 
-        $('#circleOne').click(function () {
+        $('.circleOne').click(function () {
+            $(this).toggleClass('lime');
             $('#carGif1')
                 .animate({left: "+=600"}, 700)
                 .queue(function () {
@@ -66,10 +68,14 @@ intervalID = setInterval(fade, 150);
                 .animate({left: "-=600"}, 700)
                 .queue(function () {
                     $(this).toggleClass("flip").dequeue();
-                })
+                });
+            setTimeout(function() {
+            $('.circleOne').toggleClass('lime')
+            }, 1400)
         });
 
-        $('#circleTwo').click(function () {
+        $('.circleTwo').click(function () {
+            $(this).toggleClass('yellow');
             $('#carGif1')
                 .animate({left: "+=600"}, 700)
                 .queue(function () {
@@ -79,9 +85,13 @@ intervalID = setInterval(fade, 150);
                 .queue(function () {
                     $(this).toggleClass("flip").dequeue();
                 })
+            setTimeout(function() {
+                $('.circleTwo').toggleClass('yellow')
+            }, 1400)
         });
 
-        $('#circleThree').click(function () {
+        $('.circleThree').click(function () {
+            $(this).toggleClass('red');
             $('#carGif1')
                 .animate({left: '+=600'}, 700)
                 .queue(function () {
@@ -97,9 +107,11 @@ intervalID = setInterval(fade, 150);
 
         function reset() {
             $('div').last().append('<img id="explosion" src="explosion.gif" alt="explosionGif">');
+            scream.play();
             setTimeout(function () {
+                $('.circleThree').toggleClass('red');
             $('div').last().html('<div><img id="carGif1" class = "carGif" src="cargif.gif" alt="carGif"></div>')
-            }, 2000)
+            }, 4000)
 
         }
 

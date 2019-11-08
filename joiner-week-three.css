@@ -5,14 +5,23 @@
     border: 1px solid black;
     margin-right: 0;
 }
-#circleOne {
+.lime {
+    background-color: lime!important;
+}
+.yellow {
+    background-color: yellow!important;
+}
+.red {
+    background-color: red!important;
+}
+.circleOne {
     background-color: green;
 }
-#circleTwo {
-    background-color: yellow;
+.circleTwo {
+    background-color: #EEA939;
 }
-#circleThree {
-    background-color: red;
+.circleThree {
+    background-color: darkred;
 }
 .carGif {
     height: 40px;
