@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // Write a function called lowestPriceBook that takes in the above defined array of objects "books" and returns the object containing the title, price, and author of the book with the lowest priced book.
+
+
+    var books = [
+        {
+            "title": "Genetic Algorithms and Machine Learning for Programmers",
+            "price": 36.99,
+            "author": "Frances Buontempo"
+        },
+        {
+            "title": "The Visual Display of Quantitative Information",
+            "price": 38.00,
+            "author": "Edward Tufte"
+        },
+        {
+            "title": "Practical Object-Oriented Design",
+            "author": "Sandi Metz",
+            "price": 30.47
+        },
+        {
+            "title": "Weapons of Math Destruction",
+            "author": "Cathy O'Neil",
+            "price": 17.44
+        }
+    ];
+
+
+    //this exercise was the bane of my existence during the pre-work, it took me literally hours. Upon revisiting, I  applied a new thought process and was able to complete the challenge in a very straightforward way. The function essentially asserts that we do not yet have a least expensive book. A for loop then goes through each object in the array and look at it's price. If we do not yet have a least expensive book or the book we are looking at has a price lower than that of our current least expensive book, then the book we are looking at becomes our new least expensive book.
+
+
+    function lowestPriceBook(arr) {
+        var leastExpensiveBook = false;
+        for (var i = 0; i < arr.length; i++){
+            if (!leastExpensiveBook || arr[i].price < leastExpensiveBook.price){
+                leastExpensiveBook = arr[i];
+            }
+        } return leastExpensiveBook
+    }
+
+    console.log(lowestPriceBook(books));
+
+</script>
+</body>
+</html>
