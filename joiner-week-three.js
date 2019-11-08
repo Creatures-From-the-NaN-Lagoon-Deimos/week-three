@@ -17,7 +17,7 @@ var interval;
                 } else {
                     ++counter;
                     $('div').html(counter + '<br><br>');
-                    clearInterval(interval)
+                    clearInterval(interval);
                     createSentence()
                 }
                 console.log(counter)
@@ -88,22 +88,25 @@ intervalID = setInterval(fade, 150);
                     $(this).toggleClass("flip").dequeue();
                 });
 
-            setTimeout(createCarTwo, 700)
+            setTimeout(createCarTwo, 700);
 
-            $('#carGif1').animate({left: '-=275'}, 500)
+            $('#carGif1').animate({left: '-=285'}, 500);
 
-            setTimeout(reset, 2000)
+            setTimeout(reset, 1200)
         });
 
         function reset() {
+            $('div').last().append('<img id="explosion" src="explosion.gif" alt="explosionGif">');
+            setTimeout(function () {
             $('div').last().html('<div><img id="carGif1" class = "carGif" src="cargif.gif" alt="carGif"></div>')
+            }, 2000)
 
         }
 
         function createCarTwo() {
             $('div').last().append('<img id="carGif2" class = "carGif" src="cargif.gif" alt="carGif">')
             $('#carGif2')
-                .animate({left: '+=275'}, 500)
+                .animate({left: '+=285'}, 500)
         }
     }
 
