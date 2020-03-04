@@ -52,7 +52,6 @@ intervalID = setInterval(fade, 150);
 
 //And this fires after the sentence is complete for 2 seconds
 
-
     function circles() {
         $('body').html("");
         $('body').html('<div class="circle-container">' + '<div class="circle circleOne"></div>' + '<div class="circle circleTwo"></div>' + '<div class="circle circleThree"></div>' + '<div>Click A Light</div><br>' + '<div><img id="carGif1" class="carGif" src="cargif.gif" alt="carGif"></div></div>')
